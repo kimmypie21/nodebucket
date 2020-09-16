@@ -1,3 +1,11 @@
+/*
+Title: WEB450 NodeBucket
+Author: Professor Krasso
+Date: September 2020
+Modified By: Kimberly Pierce
+Description: NodeBucket
+*/
+
 import { browser, by, element } from 'protractor';
 
 export class AppPage {

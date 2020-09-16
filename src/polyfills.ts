@@ -1,3 +1,11 @@
+/*
+Title: WEB450 NodeBucket
+Author: Professor Krasso
+Date: September 2020
+Modified By: Kimberly Pierce
+Description: NodeBucket
+*/
+
 /**
  * This file includes polyfills needed by Angular and is loaded before the app.
  * You can add your own extra polyfills to this file.

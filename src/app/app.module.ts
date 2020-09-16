@@ -1,3 +1,12 @@
+/*
+Title: WEB450 NodeBucket
+Author: Professor Krasso
+Date: September 2020
+Modified By: Kimberly Pierce
+Description: NodeBucket
+*/
+
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 

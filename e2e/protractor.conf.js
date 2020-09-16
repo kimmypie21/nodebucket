@@ -1,3 +1,11 @@
+/*
+Title: WEB450 NodeBucket
+Author: Professor Krasso
+Date: September 2020
+Modified By: Kimberly Pierce
+Description: NodeBucket
+*/
+
 // @ts-check
 // Protractor configuration file, see link for more information
 // https://github.com/angular/protractor/blob/master/lib/config.ts
