@@ -1,11 +1,3 @@
-/*
-Title: NodeBucket
-Author: Professor Krasso
-Date: September 2020
-Modified By: Kimberly Pierce
-Description: WEB 450 NodeBucket
-*/
-
 import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
 
@@ -18,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to nodebucket!');
+    expect(page.getTitleText()).toEqual('nodebucket app is running!');
   });
 
   afterEach(async () => {

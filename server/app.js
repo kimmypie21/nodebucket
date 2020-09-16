@@ -1,11 +1,3 @@
-/*
-Title: NodeBucket
-Author: Professor Krasso
-Date: September 2020
-Modified By: Kimberly Pierce
-Description: WEB 450 NodeBucket
-*/
-
 /**
  * Require statements
  */
@@ -48,7 +40,7 @@ mongoose.connect(conn, {
 }); // end mongoose connection
 
 /**
- * API(s)
+ * API(s) go here...
  */
 
 /**
