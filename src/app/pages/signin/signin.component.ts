@@ -36,7 +36,8 @@ export class SigninComponent implements OnInit {
     const empId = this.form.controls['empId'].value;
     this.http.get('/api/employees/' + empId).subscribe(res =>{
       if (res) {
-        this.cookieService.set('session_user', empId, 1); //set the emp id to the cookie, session user name
+        this.cookieService.set('session_user', empId, 1);//set the emp id to the cookie, session user name
+        this.router.navigate(['/']); 
       }else{
         this.error="The Employee Id you entered is invalid. Please try again."
       }
