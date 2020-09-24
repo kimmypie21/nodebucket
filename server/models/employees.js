@@ -27,13 +27,3 @@ module.exports = mongoose.model( "Employee", employeeSchema );
 
 
 
-/* NoSQL data structure
-[{
-    "empId": "string",
-    "firstname": " value",
-    "lastname": " value ",
-    "todo": [{"text": "item"}],
-    "done": [{"text": "item"}]
-}
-]
-*/
