@@ -14,6 +14,8 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
 const Employee = require ('./models/employees');
+const Item = require ('./models/item');
+const EmployeeApi = require ('./routes/employee-api'); 
 
 //App configurations
 let app = express();
@@ -60,35 +62,7 @@ mongoose.connect(conn, {
 
 //API(s) go here...
 
-//FindEmployeeById API
-app.get('/api/employees/:empId', async(req, res) => {
-
-  try {
-      Employee.findOne({'empId': req.params.empId}, function(err, employee){
-
-        //database level error message
-        if(err){
-          console.log(err);
-          res.status(500).send({
-            'message': "Internal Server Error"
-          })
-        }else{//no error return data
-          console.log(employee);
-          res.json(employee);
-        }
-      })
-    }catch(e){//catch any potential errors we didn't prepare for
-      console.log(e);
-      res.status(500).send({
-      'message': 'Internal Server Error',
-        })
-      }
-})
-//end FindEmployeeById API
-
-
-
-
+app.use('/api/employees', EmployeeApi);
 
 
 
