@@ -9,4 +9,9 @@ Description: NodeBucket
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+    margin: 0; 
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    background-image: linear-gradient(to left bottom, #ebfdfd, #e5f9f9, #dff5f5, #d9f1f2, #d3edee, #cce9eb, #c5e6e7, #bee2e4, #b4dee0, #aadadc, #9fd5d7, #95d1d3);
+}
+

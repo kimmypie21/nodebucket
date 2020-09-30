@@ -8,43 +8,54 @@ Description: NodeBucket
 */
 -->
 
+<!--<img fxFlex="nogrow" src="../assets/nodebucketlogo.png" routerLink="/" width="180px" height="150px" id="logo">-->
 
-<div fxLayout="column">
+<div fxLayout='column'  fxLayoutGap="20px">
+
 
     <!-- navigation -->
    
-    <nav fxFlex>
-      <mat-toolbar>
-        <img src="../assets/nodebucketlogo" width="200px" height="160px" id="logo">
+    <div fxLayout="row" gdAlignRows="center">
+      <img fxFlex="nogrow" src="../assets/nodebucketlogo.png" routerLink="/" width="180px" height="150px" id="logo">
+    </div>
+
+    <nav fxLayout="row" gdAlignRows="center">
+      <mat-toolbar  fxFlex >
         <!-- navbar container -->
-        <div class="navbar-container">
+        
+        <div fxFlex>
           <!-- logo -->
           
-          <button class="logo" routerLink="/" mat-button>NodeBucket</button>
-          <button class="navbar-link" routerLink="/" mat-button>Home</button>
-          <button class="navbar-link" routerLink="about" mat-button>About</button>
+          <button fxFlex="nogrow" class="navbar-link" routerLink="/" mat-button>Home</button>
+          <button fxFlex="nogrow" class="navbar-link" routerLink="about" mat-button>About</button>
         </div>
-  
       </mat-toolbar>
     </nav>
   
+
     <!-- main content -->
-    <div fxFlex>
-      <main class="main-content" fxFlex="100%;">
-        <router-outlet></router-outlet>
+   
+      <main fxLayout="row" gdAlignRows="center">
+
+        <mat-card>
+          <mat-card-content>
+            <router-outlet></router-outlet>
+          </mat-card-content>
+        </mat-card>
+       
       </main>
-    </div>
+    
   
     <!-- footer -->
-    <div fxFlex>
-      <footer class="footer">
+    
+      <footer fxLayout="row" gdAlignRows="center">
         <mat-toolbar class="footer-content">
           <p>
-            &copy; {{year | date: 'yyyy'}} - nodebucket - <a href="https://www.bellevue.edu/" class="bu-link" target="_blank">Bellevue University</a>
+            &copy; {{year | date: 'yyyy'}} - NodeBucket - <a href="https://www.bellevue.edu/" class="bu-link" target="_blank">Bellevue University</a>
           </p>
         </mat-toolbar>
       </footer>
-    </div>
+    
   
   </div>
   

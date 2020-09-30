@@ -7,37 +7,33 @@ Description: NodeBucket
 */
 
 
-#logo{
-  margin-top: 8%;
-  padding: 5%;
+main mat-card{
+  
 }
 
-.logo {
-    margin-left: 75px;
-    font-size: 24px;
-    font-weight: lighter;;
+  mat-toolbar{
+    background-color: transparent;
   }
-  
-  .navbar-container {
-    padding: 5px;
+ 
+  nav{
+    margin-top: -4%;
   }
-  
+
   .navbar-link {
-    font-size: 24px;
-    font-weight: lighter;
+    font-size: 25px;
+    font-family: 'Fira Sans Extra Condensed';
+
   }
-  
-  .main-content {
-    padding-left: 30px;
-  }
-  
-  .footer {
+
+
+  footer {
     bottom: 0;
     position: absolute;
     width: 100%;
   }
   
   .footer-content {
+    
     font-size: 16px;
     font-weight: lighter;
     padding-left: 100px;
@@ -46,6 +42,7 @@ Description: NodeBucket
   
   .bu-link {
     text-decoration: none;
+    color: #00AAB6;
   }
   
   .bu-link:hover {
