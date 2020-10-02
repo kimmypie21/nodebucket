@@ -10,26 +10,18 @@ Description: NodeBucket
 
 <!--<img fxFlex="nogrow" src="../assets/nodebucketlogo.png" routerLink="/" width="180px" height="150px" id="logo">-->
 
-<div fxLayout='column'  fxLayoutGap="20px">
+<div fxLayout='column'>
 
 
     <!-- navigation -->
    
-    <div fxLayout="row" gdAlignRows="center">
+    <div fxLayout="row" gdAlignRows="start">
       <img fxFlex="nogrow" src="../assets/nodebucketlogo.png" routerLink="/" width="180px" height="150px" id="logo">
     </div>
 
-    <nav fxLayout="row" gdAlignRows="center">
-      <mat-toolbar  fxFlex >
-        <!-- navbar container -->
-        
-        <div fxFlex>
-          <!-- logo -->
-          
-          <button fxFlex="nogrow" class="navbar-link" routerLink="/" mat-button>Home</button>
-          <button fxFlex="nogrow" class="navbar-link" routerLink="about" mat-button>About</button>
-        </div>
-      </mat-toolbar>
+    <nav fxLayout="column" gdAlignColumns="start">
+          <div><button  class="navbar-link" routerLink="/" mat-button>Home</button></div>
+          <div><button  class="navbar-link" routerLink="about" mat-button>About</button></div>
     </nav>
   
 

@@ -33,18 +33,6 @@ const port = 3000; // server port
 const conn = "mongodb+srv://nodebucket_user:tgVY8kPTQmlFeKRZ@buwebdev-cluster-1.brhxo.mongodb.net/nodebucket";
 
 
-/*
-//connect to db using latest version
-mongoose.connect(dbConn, { useNewUrlParser: true, useUnifiedTopology: true});
-//get the mongodb connection object 
-let db =  mongoose.connection;
-//listen for and handle errors
-db.on('error', console.error.bind(console, "MongoDb connection error"));
-//successful connection message
-db.once('open', function(){
-    console.log('Connection to MongoDB Atlas successful')
-})
-*/
 
 //database connection
 mongoose.connect(conn, {
