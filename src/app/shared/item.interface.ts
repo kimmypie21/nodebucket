@@ -7,6 +7,8 @@ Description: NodeBucket
 */
 
 
-export const environment = {
-  production: true
-};
+export interface Item{
+    _id: string;
+    text: string;
+}
+

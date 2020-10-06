@@ -1,13 +1,14 @@
 /*
 Title: WEB450 NodeBucket
 Author: Professor Krasso
-Date: September 2020
+Date: October 2020
 Modified By: Kimberly Pierce
 Description: NodeBucket
 */
 
+
 .main-welcome {
-    margin-top: 5%;
+    
   }
   
   .title {
@@ -20,3 +21,8 @@ Description: NodeBucket
     font-size: 14px;
   }
   
+  .cdk-drag-preview{
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0,0, 0.2);
+  }

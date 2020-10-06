@@ -1,10 +1,11 @@
 /*
 Title: WEB450 NodeBucket
 Author: Professor Krasso
-Date: September 2020
+Date: October 2020
 Modified By: Kimberly Pierce
 Description: NodeBucket
 */
+
 
 
 import { NgModule } from '@angular/core';
@@ -25,17 +26,18 @@ const routes: Routes = [
     children: [
       {path: '', component: HomeComponent, canActivate: [AuthGuard]},
       {path: 'about', component: AboutComponent},
+      {path: 'not-found', component: NotFoundComponent}
     ]
   },
 
   { path: 'session', component: AuthLayoutComponent,
     children: [
-      {path: "signin", component: SigninComponent},
-      {path: 'not-found', component: NotFoundComponent}
+      {path: "signin", component: SigninComponent}
+      
     ]
   },
 
-  { path: '**', redirectTo: 'session/not-found' }
+  { path: '**', redirectTo: 'not-found' }
   
 ];
 

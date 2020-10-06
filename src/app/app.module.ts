@@ -1,10 +1,11 @@
 /*
 Title: WEB450 NodeBucket
 Author: Professor Krasso
-Date: September 2020
+Date: October 2020
 Modified By: Kimberly Pierce
 Description: NodeBucket
 */
+
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,6 +23,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDividerModule } from '@angular/material/divider';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 //components
 import { AppComponent } from './app.component';
@@ -56,7 +59,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     MatCardModule,
     MatInputModule,
     MatFormFieldModule,
-    
+    MatDividerModule,
+    DragDropModule
   ],
   
   providers: [],

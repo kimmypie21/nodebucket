@@ -1,10 +1,11 @@
 /*
 Title: WEB450 NodeBucket
 Author: Professor Krasso
-Date: September 2020
+Date: October 2020
 Modified By: Kimberly Pierce
 Description: NodeBucket
 */
+
 
 //require statements
 const mongoose = require ('mongoose');
