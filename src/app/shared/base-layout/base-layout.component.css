@@ -18,13 +18,12 @@ main mat-card{
  
   nav{
     margin-left: 3%;
-
+    
   }
 
   .navbar-link {
-    font-size: 25px;
-    font-family: 'Fira Sans Extra Condensed';
-
+    font-size: 19px;
+    font-family: 'Special Elite', cursive;
   }
 
 

@@ -22,21 +22,23 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 
 const routes: Routes = [
+ 
   { path: '', component: BaseLayoutComponent,
     children: [
       {path: '', component: HomeComponent, canActivate: [AuthGuard]},
       {path: 'about', component: AboutComponent},
-      {path: 'not-found', component: NotFoundComponent}
+      
     ]
   },
 
   { path: 'session', component: AuthLayoutComponent,
     children: [
-      {path: "signin", component: SigninComponent}
+      {path: "signin", component: SigninComponent},
       
     ]
   },
-
+  
+  {path: 'not-found', component: NotFoundComponent},
   { path: '**', redirectTo: 'not-found' }
   
 ];

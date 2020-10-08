@@ -12,29 +12,118 @@ Description: NodeBucket
 
 
 <div fxLayout="column" class="main-welcome" fxLayoutGap="20px" >
-
-  <h1 class="title" >
-    Welcome to NodeBucket Task Management!
-  </h1>
   
 
-  <div fxLayout="row" fxLayoutGap="20px" fxLayout.sm="column" fxLayout.xs="column">
-    
-    
-    
-    <mat-card fxFlex class="tasks">
-      <mat-card-content>
-        <h3>To Do</h3>
-      </mat-card-content>
-    </mat-card>
-
-  <mat-card fxFlex class="tasks">
-      <mat-card-content>
-        <h3>Done</h3>
-      </mat-card-content>
-    </mat-card>
+  <div fxFlex>
+    <h1 class="title" >
+      Welcome to NodeBucket Task Management!
+    </h1>
 
   </div>
 
-</div>
+  <!--create task button-->
+  <div fxFlex>
+    <div class="create-task-container" fxLayout="column">
+      <button mat-raised-button (click)="openCreateTaskDialogue()">Create Task</button>
+    </div>
+  </div>
+  <!--end create task button-->
+
+  <div fxFlex>
+
+  </div>
+
+
+  <div fxFlex>
+
+    <div fxLayout="row" fxLayoutGap="15px" class="task-container">
+
+      <!--to do list-->
+      <div fxFlex>
+        <mat-card  class="mat-elevation-z0">
+          <mat-card-title>To Do</mat-card-title>
+          <mat-card-content >
+            <div fxLayout="column" 
+            fxLayoutGap="10px" 
+            class="task-list" 
+            cdkDropList 
+            #todoList="cdkDropList" 
+            [cdkDropListData]="todo" 
+            [cdkDropListConnectedTo]= '[doneList]' 
+            (cdkDropListDropped)= 'drop($event)'>
+
+              <div *ngFor='let item of todo' cdkDrag>
+                <mat-card class="mat-elevation-z0" class="task-card">
+                  <mat-card-content>
+                    <div fxLayout="row">
+                      <div fxFlex>
+                        {{ item.text }}
+                      </div>
+                      <div fxFlex fxLayoutAlign="end">
+                        <button [matMenuTriggerFor]='todoOptions'></button>
+                        <mat-menu #todoOptions="matMenu" >
+
+                        </mat-menu>
+                      </div>
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <!--end to do list-->
+
+
+      <!--done list-->
+      <div fxFlex>
+        <mat-card  class="mat-elevation-z0">
+          <mat-card-title>Done</mat-card-title>
+          <mat-card-content >
+            <div fxLayout="column" 
+            fxLayoutGap="10px" 
+            class="task-list" 
+            cdkDropList 
+            #doneList="cdkDropList" 
+            [cdkDropListData]="done" 
+            [cdkDropListConnectedTo]= '[todoList]' 
+            (cdkDropListDropped)= 'drop($event)'>
+            
+              <div *ngFor='let item of done' cdkDrag>
+                <mat-card class="mat-elevation-z0" class="task-card">
+                  <mat-card-content>
+                    <div fxLayout="row">
+                      <div fxFlex>
+                        {{ item.text }}
+                      </div>
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <!--end done list-->
+
+    </div>
+    
+    
+
+  </div>
+
+
+  
+  
+
+  
+    
+    
+    
+    
+
+  
+
+ 
   

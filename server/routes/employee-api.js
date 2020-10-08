@@ -57,19 +57,18 @@ router.get('/:empId/tasks', async(req, res) =>{
       Employee.findOne({'empId':req.params.empId, }, 'empId todo done', function(err,employee){//'empId todo done' projection to just access the data we need
         if(err){
             console.log(err);
-            res.status(500).send({
-              'message': "Internal Server Error"
-            })
+            const findTaskMongoDbErrorResponse = new ErrorResponse ('500', 'Internal Server Error', err);
+            res.status(500).send(findTaskMongoDbErrorResponse.toObject());
         }else{
           console.log(employee);
-          res.json(employee);
+          const findTasksResponse = new BaseResponse ('200', "Success " , employee);
+          res.json(findTasksResponse.toObject());
         }
       })
     }catch(e){
       console.log(e);
-      res.status(500).send({
-        'message': "Internal Server Error"
-      })
+      const findTaskCatchErrorResponse = new ErrorResponse('500', 'Internal Server Error', e.message);
+      res.status(500).send(findTaskCatchErrorResponse.toObject());
     }
    })
   //*end FindAllTasks

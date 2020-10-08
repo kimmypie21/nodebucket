@@ -1,4 +1,3 @@
-<!--
 /*
 Title: WEB450 NodeBucket
 Author: Professor Krasso
@@ -7,8 +6,10 @@ Modified By: Kimberly Pierce
 Description: NodeBucket
 */
 
--->
+import { Item } from "./item.interface";
 
-<h1 class="title">About Us</h1>
-
-
+export interface Employee{
+    empId: string;
+    todo: Item[];
+    done: Item[];
+}
