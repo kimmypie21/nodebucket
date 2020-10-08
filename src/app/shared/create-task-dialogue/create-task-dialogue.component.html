@@ -1,9 +1,22 @@
-
+<!--
+    /*
+Title: WEB450 NodeBucket
+Author: Professor Krasso
+Date: October 2020
+Modified By: Kimberly Pierce
+Description: NodeBucket
+*/
+-->
 
 <h2 mat-dialog-title>Add New Task</h2>
 
 <mat-dialog-content [formGroup]="taskForm">
     <mat-form-field style="width: 200px">
-        <input type='text' placeholder="Enter New Task Name" matInput formControlName='text' (keydown.enter="createTask()">
+        <input type='text' placeholder="Enter New Task Name" matInput formControlName='text' (keydown.enter)="createTask()">
     </mat-form-field>
 </mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-button (click)="cancel()">Cancel</button>
+    <button mat-button [disabled]="!taskForm.valid" (click)="createTask()">Add Task</button><!--disable button if no valid input-->
+</mat-dialog-actions>

@@ -33,8 +33,8 @@ export class HomeComponent implements OnInit {
   employee: Employee;//Employee interface
 
   constructor(private taskService: TaskService, private cookieService: CookieService, private dialog: MatDialog) { 
-    this.empId = this.cookieService.get('session_user');
 
+    this.empId = this.cookieService.get('session_user');//get currently logged in empId from cookieService
     this.taskService.findAllTasks(this.empId).subscribe(res =>{
       console.log('--findAllTasks server response--');
       console.log(res);
@@ -55,22 +55,38 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //drag and drop functionality
   drop(event: CdkDragDrop<any[]>){
 
-    if (event.previousContainer === event.container){
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    //change order in same container
+    if (event.previousContainer === event.container){//check current container 
+      moveItemInArray(event.container.data, 
+                      event.previousIndex, 
+                      event.currentIndex);//if same container, change order in array
       console.log('--Reordered the existing list of tasks--');
-    }else{
-      transferArrayItem(event.previousContainer.data, event.container.data, event.previousIndex, event.currentIndex);
+      this.updateTaskList(this.empId, this.todo, this.done);//call updated list of tasks
+    }else{//if not same container, move to new container
+      transferArrayItem(event.previousContainer.data, 
+                        event.container.data, 
+                        event.previousIndex, 
+                        event.currentIndex);
       console.log ("--Moved Task Item to New Container--");
+      this.updateTaskList(this.empId, this.todo, this.done);//call updated list of tasks
     }
   }
-  private updateTaskList(empId: string, todo: Item[], done: Item[]){
+  //update task private function
+  private updateTaskList(empId: string, todo: Item[], done: Item[]): void{
     this.taskService.updateTask(empId, todo, done).subscribe(res =>{
       this.employee = res.data;
-
-    })
+    }, err => {
+      console.log (err)
+    }, () => {
+      this.todo = this.employee.todo;
+      this.done = this.employee.done;
+    }
+    )
   }
+  //open dialog to create task
   openCreateTaskDialogue(){
     const dialogRef = this.dialog.open(CreateTaskDialogueComponent, {
       disableClose: true
@@ -78,10 +94,30 @@ export class HomeComponent implements OnInit {
     dialogRef.afterClosed().subscribe(data => {
       if (data){
         this.taskService.createTask(this.empId, data.text).subscribe(res =>{
-          
+          this.employee = res.data; 
+        }, err => {
+          console.log(err);
+        }, () => {
+          this.todo = this.employee.todo;
+          this.done = this.employee.done;
         })
       }
     })
+  }
+
+  //delete task function
+  deleteTask(taskId: string){
+    if (taskId){
+      console.log('--Task Item: ${taskId} was deleted');
+      this.taskService.deleteTask(this.empId, taskId).subscribe(res => {
+        this.employee = res.data;
+      }, err =>{
+        console.log(err);
+      }, ()=>{
+        this.todo = this.employee.todo;
+        this.done = this.employee.done;
+      })
+    }
   }
 
 }

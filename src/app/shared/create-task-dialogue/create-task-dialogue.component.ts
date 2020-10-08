@@ -16,18 +16,23 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
   templateUrl: './create-task-dialogue.component.html',
   styleUrls: ['./create-task-dialogue.component.css']
 })
-export class CreateTaskDialogueComponent implements OnInit {
+export class CreateTaskDialogueComponent implements OnInit {//works 10.8
+
+  taskForm: FormGroup;
 
   constructor( private dialogRef: MatDialogRef<CreateTaskDialogueComponent>, private fb: FormBuilder) {
 
    }
 
-  ngOnInit(): void {
+  ngOnInit(): void {//works 10.8
     this.taskForm = this.fb.group({
-      text: [ null, Validators.compose([Validators.required])]
+      text: [ null, Validators.compose([Validators.required])]//requires entry 
     })
   }
-  createTask(){
-    this.dialogRef.close(this.taskForm.value);
+  createTask(){//works 10.8
+    this.dialogRef.close(this.taskForm.value);//adds new task and closes dialog
+  }
+  cancel(){//works 10.8
+    this.dialogRef.close(); //closes dialog on click of cancel button
   }
 }

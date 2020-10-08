@@ -8,7 +8,8 @@ Description: NodeBucket
 
 
   .main-welcome{
-    
+    margin-top: -15%;
+   
   }
 
   .title {
@@ -44,13 +45,15 @@ Description: NodeBucket
 
   /*task management page styles*/
   .create-task-container{
-    width: 35%;
+    width: 80%;
     margin:0 auto;
   }
 
   .task-container{
-    width: 35%;
+    width: 80%;
+    
     margin: 0 auto;
+    
   }
 
   .task-list{
@@ -60,19 +63,23 @@ Description: NodeBucket
     border-radius: 4px;
     overflow: hidden;
     display: block;
+    
   }
 
   .task-card{
     cursor: move;
     padding: 20px 10px;
     border-bottom: solid 1px #ccc;
+    
     min-height: 68px;
     height: 68px;
-    min-width: 100px;
-    width: 100px;
     font-size: 14px;
     box-sizing: border-box;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .task-options-menu{
+    margin-top: -15px;
   }
 

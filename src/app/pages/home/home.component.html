@@ -13,13 +13,13 @@ Description: NodeBucket
 
 <div fxLayout="column" class="main-welcome" fxLayoutGap="20px" >
   
-
+  <!--title div-->
   <div fxFlex>
     <h1 class="title" >
       Welcome to NodeBucket Task Management!
     </h1>
-
   </div>
+  <!--end title div-->
 
   <!--create task button-->
   <div fxFlex>
@@ -29,13 +29,8 @@ Description: NodeBucket
   </div>
   <!--end create task button-->
 
-  <div fxFlex>
 
-  </div>
-
-
-  <div fxFlex>
-
+    <!--tast container div-->
     <div fxLayout="row" fxLayoutGap="15px" class="task-container">
 
       <!--to do list-->
@@ -43,7 +38,8 @@ Description: NodeBucket
         <mat-card  class="mat-elevation-z0">
           <mat-card-title>To Do</mat-card-title>
           <mat-card-content >
-            <div fxLayout="column" 
+            <div 
+            fxLayout="column" 
             fxLayoutGap="10px" 
             class="task-list" 
             cdkDropList 
@@ -60,9 +56,14 @@ Description: NodeBucket
                         {{ item.text }}
                       </div>
                       <div fxFlex fxLayoutAlign="end">
-                        <button [matMenuTriggerFor]='todoOptions'></button>
-                        <mat-menu #todoOptions="matMenu" >
+                        <button [matMenuTriggerFor]='todoOptions' class="task-options-menu" mat-icon-button>
+                          <mat-icon>more_horiz</mat-icon>
+                        </button>
 
+                        <mat-menu #todoOptions="matMenu" x-position="before">
+                          <button (click)='deleteTask(item._id)' mat-menu-item>
+                            Delete Task
+                          </button>
                         </mat-menu>
                       </div>
                     </div>
@@ -81,7 +82,8 @@ Description: NodeBucket
         <mat-card  class="mat-elevation-z0">
           <mat-card-title>Done</mat-card-title>
           <mat-card-content >
-            <div fxLayout="column" 
+            <div 
+            fxLayout="column" 
             fxLayoutGap="10px" 
             class="task-list" 
             cdkDropList 
@@ -97,6 +99,16 @@ Description: NodeBucket
                       <div fxFlex>
                         {{ item.text }}
                       </div>
+                      <div fxFlex fxLayoutAlign='end'>
+                        <button [matMenuTriggerFor]='doneOptions' class="task-options-menu" mat-icon-button>
+                          <mat-icon>more_horiz</mat-icon>
+                        </button>
+                        <mat-menu #doneOptions="matMenu" x-position="before">
+                          <button (click)="deleteTask(item._id)" mat-menu-item>
+                            Delete Task
+                          </button>
+                        </mat-menu>
+                      </div>
                     </div>
                   </mat-card-content>
                 </mat-card>
@@ -107,11 +119,11 @@ Description: NodeBucket
       </div>
       <!--end done list-->
 
-    </div>
+    </div><!--task container div-->
     
     
 
-  </div>
+  </div><!--main-welcome div-->
 
 
   

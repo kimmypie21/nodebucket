@@ -16,8 +16,6 @@ import { Item } from './item.interface';
 })
 export class TaskService {
 
-  
-
   constructor(private http: HttpClient) {
     
    }
@@ -27,27 +25,25 @@ export class TaskService {
     return this.http.get('/api/employees/' + empId + '/tasks')
     }
 
-
-
   //createTasks service
   createTask(empId: string, task: string): Observable<any>{
-    return this.http.post('/api/employees' + empId + '/tasks', {})
+    return this.http.post('/api/employees/' + empId + '/tasks', {
+      text: task
+    })
 }
 
   //updateTasks service
     updateTask(empId: string, todo: Item[], done: Item[]): Observable<any> {
-      return this.http.put('/api/employees' + empId + '/tasks')
-
+      return this.http.put('/api/employees/' + empId + '/tasks',{
+        todo, done
+      })
     }
 
 
   //deleteTasks service
-    deleteTask(empId: string, taskId: string){
-      return this.http.delete('/api/employees' + empId + '/tasks/' + taskId) 
+    deleteTask(empId: string, taskId: string): Observable<any> {
+      return this.http.delete('/api/employees/' + empId + '/tasks/' + taskId) 
     }
-
-
-
 }
 
 
