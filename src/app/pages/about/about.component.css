@@ -12,7 +12,37 @@ Description: NodeBucket
     font-family: 'Special Elite', cursive;
 }
 
-.about{
-  margin-top: -15%;  
-    
+.about-us{
+ margin: 0 auto;
+ width: 80% ;
+ margin-top: -15%;
+ 
+}
+
+.about-text {
+  margin: 0 auto;
+  width: 80%;
+  margin-bottom: 5%;
+  
+}
+
+.about-images{
+  margin: 0 auto;
+  width: 80%;
+  margin-bottom: 15%;
+}
+.about-text p{
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  font-size: 18px;
+  
+  
+}
+
+.about-text mat-card{
+  background-color:  rgba(255, 255, 255, .60);
+}
+
+.about-images img{
+  margin-bottom: 3%;
+  border-radius: 20%;
 }

@@ -8,12 +8,11 @@ Description: NodeBucket
 
 
 
-main mat-card{
-  
-}
+
 
   mat-toolbar{
     background-color: transparent;
+    
   }
  
   nav{
@@ -28,8 +27,10 @@ main mat-card{
 
 
   footer {
+    left: 0;
+    text-align: center;
     bottom: 0;
-    position: absolute;
+    position: fixed;
     width: 100%;
   }
   

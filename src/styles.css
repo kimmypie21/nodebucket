@@ -14,5 +14,7 @@ body {
     margin: 0; 
     font-family: 'Fira Sans Extra Condensed', sans-serif;
     background-image: linear-gradient(to left bottom, #ebfdfd, #e5f9f9, #dff5f5, #d9f1f2, #d3edee, #cce9eb, #c5e6e7, #bee2e4, #b4dee0, #aadadc, #9fd5d7, #95d1d3);
+    background-size: 100%;
+    background-attachment: fixed;
 }
 
