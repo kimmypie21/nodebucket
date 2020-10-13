@@ -26,8 +26,6 @@ app.use(express.static(path.join(__dirname, '../dist/nodebucket')));//server sid
 app.use('/', express.static(path.join(__dirname, '../dist/nodebucket')));//server side render angular
 
 
-// Variables
-const port = 3000; // server port
 
 //variable that holds db connection string
 const conn = "mongodb+srv://nodebucket_user:tgVY8kPTQmlFeKRZ@buwebdev-cluster-1.brhxo.mongodb.net/nodebucket";
@@ -59,7 +57,7 @@ app.use('/api/employees', EmployeeApi);
 
 
 //Create and start server on localhost:3000
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000; // server port
 http.createServer(app).listen(port, function() {
   console.log(`Application started and listening on port: ${port}`)
 }); 
