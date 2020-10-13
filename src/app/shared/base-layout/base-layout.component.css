@@ -8,7 +8,10 @@ Description: NodeBucket
 
 
 
-
+main{
+  margin-bottom: 5%;
+  
+}
 
   mat-toolbar{
     background-color: transparent;
@@ -27,11 +30,12 @@ Description: NodeBucket
 
 
   footer {
-    left: 0;
+    
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   color: white;
     text-align: center;
-    bottom: 0;
-    position: fixed;
-    width: 100%;
   }
   
   .footer-content {
